@@ -1,0 +1,2 @@
+# Magicae
+Compilatore magie
