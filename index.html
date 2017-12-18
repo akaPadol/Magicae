@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Compilatore</title>
+</head>
+
+<body>
+
+
+
+<canvas width="500px" height="120px" id = "draw">
+update your browser!
+</canvas>
+
+
+
+
+
+<script>
+
+var x=0;
+list = new Array();
+canvas=document.getElementById("draw");
+ctx=canvas.getContext('2d');
+function redraw(){
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+	list.forEach(function(elem){
+	
+	ctx.fillStyle = elem;
+	
+	ctx.fillRect(x,0,10,10);
+	
+	
+	
+		
+		x+=11;
+		
+	});
+	
+}
+
+function draw(color){
+ctx.save();
+
+ctx.rect(x,0,10,10);
+
+ctx.fill();
+ctx.restore();
+}
+
+document.onkeypress =  zx;
+
+function zx(e){
+    var key = e.which || e.keyCode;
+    
+	
+	if (key ==113){
+		list.push("#f00");
+		x=0;
+		redraw();
+	};
+	if (key == 119){
+		list.push("#880");
+		x=0;
+		redraw();
+	};
+	if (key ==101){
+		list.push("#0f0");
+		x=0;
+		redraw();
+	};
+	if (key == 114){
+		list.push("#088");
+		x=0;
+		redraw();
+	};
+} // zx
+
+</script>
+
+</body>
+
+</html>
