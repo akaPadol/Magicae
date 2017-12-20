@@ -22,7 +22,53 @@ var x=0;
 list = new Array();
 canvas=document.getElementById("draw");
 ctx=canvas.getContext('2d');
+
+function updatelist(){
+	n = list.length;
+	list.forEach(function(elem,index,arr){
+		switch(elem) {
+    case "#f00":
+        if (((index+1) < n)){
+			switch ( arr[index+1]){
+				case "#f00":
+					arr[index]='#4b0';
+				break;
+				case "#880":
+					arr[index]='#04b';
+				break;
+				case "#0f0":
+					arr[index]='#b04';
+				break;
+				case "#088":
+					arr[index]='#3bf';
+				break;
+			
+			}
+			arr.splice( index+1, 1 );
+			
+		}
+        break;
+    case "#880":
+        
+        break;
+	case "#0f0":
+        
+        break;
+	case "#088":
+		
+		break;
+		
+   
+        
+}
+		
+		
+	});
+
+}
+
 function redraw(){
+updatelist();
 ctx.clearRect(0, 0, canvas.width, canvas.height);
 	list.forEach(function(elem){
 	
